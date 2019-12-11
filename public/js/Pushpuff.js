@@ -13,6 +13,7 @@ x = x + 1;
 if(x == 65){
 	x = 1;
 };
+
 console.log("on");}
 var pushSet = ()=>{ const timer =　setInterval(()=>{
 	if( onoff == 0){
