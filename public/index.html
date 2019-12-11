@@ -1,0 +1,77 @@
+<!DOCTYPE>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+            <title>通知学習</title>
+            <link rel="stylesheet" href="css/Pushpuff.css">
+		</head>
+		<body>
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js"></script>
+            <div class="header">
+                <img src="image/logo.png" height="130px">
+            </div>
+            <div class="discription">
+                <p class="disp">・このサイトはブラウザ通知による学習サポートサイトです</p>
+                <p class="disp">・ブラウザを開いている間、10秒ごとに選んだ科目に関する通知を送ります</p>
+                <p class="disp">・知識習得だけでなく、自分へのプレッシャーややる気を出す目的で使用できます</p>
+                <p class="disp">・ゲームプレイ時やネット閲覧時などに併用してご利用ください(ブラウザを最小化しても問題なく通知は届きます)</p>
+                <p class="disp">・ブラウザはGoogleChromeを推奨しております、他のブラウザでは通知が届かない場合がございますのでご注意ください</p>
+            </div>
+            <div class="main2">
+                <div class="nav2">
+                    <div class="parts1" v-on:click="pushTest">
+                        <img class="imgs" src="image/test.png" width="200px" height="246px">
+                        <p class="disp">・通知テストで通知が正常に送られてくるかお確かめください！</p>
+                        <p class="disp">・通知が来ない場合、ブラウザが通知に対応していない場合がございます。</p>
+                    </div>
+                    <div class="parts2">
+                        <div class="leftimg">
+                            <img class="imgs" src="image/subject.png" width="200px">
+                            <p class="disp">・教科を選択後、その右側の項目を選択してください。</p>
+                            <p class="disp">・項目選択後、通知開始ボタンを押してください。</p>
+                            <p class="disp">・通知開始後に科目を変更しても問題ございません</p>
+                        </div>
+                        <div class="subjectlist">
+                            <!--<div id="chemistry" class="subjects" v-on:mouseover="change('chemistry')">化学</div>-->
+                            <div id="WorldHistory" class="subjects" v-on:mouseover="change('WorldHistory')">世界史</div>
+                            <div id="programming" class="subjects" v-on:mouseover="change('programming')">プログラミング</div>
+                        </div>
+                        <div class="minisub">
+                            <div class="subflex" id="" style="display: flex;">
+                                <div class="subchild" id="noselect">科目にカーソルを合わせてください</div>
+                            </div>
+                            <div class="subflex" id="Fchemistry">
+                                <div class="subchild" id="chemistry" v-on:click="pushSelect">元素</div>
+                                <div class="subchild" id="chemistry">無機化学</div>
+                                <div class="subchild" id="chemistry">有機化学</div>
+                            </div>
+                            <div class="subflex" id="FWorldHistory">
+                                <div class="subchild" id="WorldHistory" v-on:click="pushSelect('WorldHistory1')">ヒトの登場〜古代オリエント</div>
+                                <div class="subchild" id="WorldHistory" v-on:click="pushSelect('WorldHistory2')">古代ギリシア、ローマ</div>
+                                <div class="subchild" id="WorldHistory" v-on:click="pushSelect('WorldHistory3')">インダス、中国文明</div>
+                                <div class="subchild" id="WorldHistory" v-on:click="pushSelect('WorldHistory4')">イスラーム、東西ヨーロッパ</div>
+                                <div class="subchild" id="WorldHistory" v-on:click="pushSelect('WorldHistory5')">大航海時代〜イギリスの覇権</div>
+                                <div class="subchild" id="WorldHistory" v-on:click="pushSelect('WorldHistory6')">アジア支配と米仏の革命</div>
+                                <div class="subchild" id="WorldHistory" v-on:click="pushSelect('WorldHistory7')">ウィーン体制〜米南北戦争</div>
+                                <div class="subchild" id="WorldHistory" v-on:click="pushSelect('WorldHistory8')">西欧の植民地支配</div>
+                                <div class="subchild" id="WorldHistory" v-on:click="pushSelect('WorldHistory9')">二度の世界大戦と現代</div>
+                            </div>
+                            <div class="subflex" id="Fprogramming">
+                                <div class="subchild" id="programming" v-on:click="pushSelect('HTMLandCSS')">HTMLandCSS</div>
+                                <div class="subchild" id="programming" v-on:click="pushSelect('JavaScript')">JavaScript</div>
+                                <div class="subchild" id="programming" v-on:click="pushSelect('JAVA')">JAVA</div>
+                                <div class="subchild" id="programming" v-on:click="pushSelect('Swift')">Swift</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="parts3" id = "onoff" v-on:click="pushStart">
+                        <img class="imgs" src="image/start.png" width="200px">
+                        <p class="disp">・このボタンで通知開始ができます!</p>
+                        <p class="disp">・もう一度クリック、またはこのページを閉じることで通知を停止できます！</p>
+                    </div>
+                </div>
+            </div>
+            <script src="js/Pushpuff.js"></script>
+		</body>
+	</html>
